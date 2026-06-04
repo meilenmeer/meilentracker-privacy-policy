@@ -1,81 +1,456 @@
+<!DOCTYPE html>
+<html lang="de">
 <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" 
-          rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Datenschutzerklärung</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg:         #f7f6f3;
+      --surface:    #ffffff;
+      --border:     #e4e0d8;
+      --accent:     #1a3a4a;
+      --accent-mid: #2e6280;
+      --text:       #1c1c1c;
+      --text-muted: #6b6560;
+      --tag-bg:     #eaf2f7;
+      --tag-text:   #1e5470;
+      --radius:     10px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg:         #111518;
+        --surface:    #1a2028;
+        --border:     #2a3540;
+        --accent:     #7ab8d4;
+        --accent-mid: #5a9ab8;
+        --text:       #e8e4de;
+        --text-muted: #8a9aa8;
+        --tag-bg:     #1a2e3a;
+        --tag-text:   #7ab8d4;
+      }
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      font-size: 16px;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      line-height: 1.75;
+      padding: 2rem 1rem 4rem;
+    }
+
+    .wrapper {
+      max-width: 740px;
+      margin: 0 auto;
+    }
+
+    /* ── Header ── */
+    header {
+      padding: 3rem 0 2.5rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 2.5rem;
+    }
+
+    .eyebrow {
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent-mid);
+      margin-bottom: 0.75rem;
+    }
+
+    h1 {
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: clamp(1.8rem, 5vw, 2.6rem);
+      line-height: 1.2;
+      color: var(--accent);
+      letter-spacing: -0.01em;
+    }
+
+    .meta {
+      margin-top: 1rem;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    /* ── Intro ── */
+    .intro {
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin-bottom: 2.5rem;
+      padding-left: 1rem;
+      border-left: 3px solid var(--accent-mid);
+    }
+
+    /* ── Sections ── */
+    section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.6rem 1.8rem;
+      margin-bottom: 1rem;
+      transition: border-color 0.2s ease;
+    }
+
+    section:hover {
+      border-color: var(--accent-mid);
+    }
+
+    h2 {
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 1.05rem;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+
+    p {
+      font-size: 0.93rem;
+      color: var(--text);
+      line-height: 1.8;
+    }
+
+    p + p {
+      margin-top: 0.75rem;
+    }
+
+    /* ── Lists ── */
+    ul {
+      list-style: none;
+      margin-top: 0.75rem;
+    }
+
+    ul li {
+      font-size: 0.93rem;
+      color: var(--text);
+      line-height: 1.8;
+      padding-left: 1.1rem;
+      position: relative;
+      margin-bottom: 0.5rem;
+    }
+
+    ul li::before {
+      content: "–";
+      position: absolute;
+      left: 0;
+      color: var(--accent-mid);
+    }
+
+    /* ── TOC (Inhaltsübersicht) ── */
+    .toc ul {
+      margin-top: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .toc ul li::before {
+      content: "→";
+      color: var(--accent-mid);
+    }
+
+    .toc a {
+      color: var(--accent-mid);
+      text-decoration: none;
+      font-size: 0.93rem;
+    }
+
+    .toc a:hover {
+      text-decoration: underline;
+    }
+
+    /* ── Links ── */
+    a {
+      color: var(--accent-mid);
+      text-decoration: underline;
+    }
+
+    a:hover {
+      color: var(--accent);
+    }
+
+    /* ── Seal / Generator credit ── */
+    .seal {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 1rem;
+    }
+
+    .seal a {
+      color: var(--text-muted);
+      font-size: 0.78rem;
+    }
+
+    /* ── Footer ── */
+    footer {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-align: center;
+      line-height: 1.6;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 480px) {
+      section {
+        padding: 1.2rem 1.2rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <ul>
-<h1>Datenschutzerklärung</h1>
-<h2 id="m4158">Präambel</h2>
-<p>Mit der folgenden Datenschutzerklärung möchten wir Sie darüber aufklären, welche Arten Ihrer personenbezogenen Daten (nachfolgend auch kurz als "Daten" bezeichnet) wir zu welchen Zwecken und in welchem Umfang im Rahmen der Bereitstellung unserer Applikation verarbeiten.</p>
-<p>Die verwendeten Begriffe sind nicht geschlechtsspezifisch.</p>
+  <div class="wrapper">
 
-<p>Stand: 30. Mai 2026</p><h2>Inhaltsübersicht</h2>
-    <ul class="index"><li><a class="index-link" href="#m4158">Präambel</a></li>
-        <li><a class="index-link" href="#verantwortliche">Verantwortliche</a></li>
-        <li><a class="index-link" href="#m3">Kontakt</a></li>
-        <li><a class="index_link" href="#no_usage">Lokale Datenspeicherung</a></li>
-        <li><a class="index_link" href="#androidvitals">Google Play Console / Android Vitals</a></li>
-        <li><a class="index_link" href="#google_backup"">Google Backup</a></li>
-        <li><a class="index-link" href="#m2427">Maßgebliche Rechtsgrundlagen</a></li>
-        <li><a class="index-link" href="#m10">Rechte der betroffenen Personen</a></li>
-        <li><a class="index-link" href="#m15">Änderung und Aktualisierung</a></li>
-        <li><a class="index_link" href="#ext_lin">Externe Links</a></li>
-    </ul>
+    <header>
+      <p class="eyebrow">Rechtliche Hinweise</p>
+      <h1>Datenschutzerklärung</h1>
+      <div class="meta">
+        <span>Stand: 30. Mai 2026</span>
+        <span>Rechtsraum: Deutschland</span>
+      </div>
+    </header>
 
-<h2 id="verantwortliche">Verantwortliche</h2>
-    <p>Natalie Dach </br>
-        c/o MediaMinds360</br>
-        Lothringer Str. 17, 63450 Hanau </br>
-        E-Mail: <a href="mailto:meilenmeer@googlemail.com">meilenmeer@googlemail.com</a>
+    <p class="intro">
+      Mit der folgenden Datenschutzerklärung möchten wir Sie darüber aufklären, welche Arten Ihrer personenbezogenen Daten
+      (nachfolgend auch kurz als "Daten" bezeichnet) wir zu welchen Zwecken und in welchem Umfang im Rahmen der Bereitstellung
+      unserer Applikation verarbeiten.
+      <br><br>
+      Die verwendeten Begriffe sind nicht geschlechtsspezifisch.
     </p>
-    
-<h2 id="m3">Kontakt</h2>
-<p>Bei Fragen zur Datenschutzerklärung wenden Sie sich an die obige E-Mail-Adresse.</p>
 
-<h2 id="no_usage">Lokale Datenspeicherung</h2><p>
-    Alle Inhalte, die Sie in der App eingeben, werden ausschließlich lokal auf Ihrem Gerät gespeichert. Wir haben zu keinem Zeitpunkt Zugriff auf diese Daten. </br>
-    Sie haben jederzeit die Möglichkeit, alle gespeicherten Daten zu löschen, indem Sie die App-Daten in den Android-Einstellungen zurücksetzen oder die App deinstallieren.</p>
+    <!-- Inhaltsübersicht -->
+    <section class="toc">
+      <h2>Inhaltsübersicht</h2>
+      <ul class="index">
+        <li><a href="#verantwortliche">Verantwortliche</a></li>
+        <li><a href="#m3">Kontakt</a></li>
+        <li><a href="#no_usage">Lokale Datenspeicherung</a></li>
+        <li><a href="#androidvitals">Google Play Console / Android Vitals</a></li>
+        <li><a href="#google_backup">Google Backup</a></li>
+        <li><a href="#m2427">Maßgebliche Rechtsgrundlagen</a></li>
+        <li><a href="#m10">Rechte der betroffenen Personen</a></li>
+        <li><a href="#m15">Änderung und Aktualisierung</a></li>
+        <li><a href="#ext_lin">Externe Links</a></li>
+      </ul>
+    </section>
 
-<h2 id="androidvitals">Google Play Console / Android Vitals</h2>
-<p>Sobald die App über den Google Play Store installiert wird, erhebt Google automatisch technische Diagnosedaten wie Absturzberichte und Performance-Metriken (sog. Android Vitals). Diese Daten werden von Google aggregiert und uns als Entwickler in anonymisierter Form in der Google Play Console zur Verfügung gestellt. Wir nutzen diese Informationen ausschließlich zur Verbesserung der App-Stabilität. </br>
-    Für die Verarbeitung durch Google gilt die <a href = "https://policies.google.com/privacy">Datenschutzerklärung von Google</a>.</p>
-    
-<h2 id="google_backup">Google Backup</h2>
-<p>Wenn Sie auf Ihrem Gerät Google Backup aktiviert haben, können App-Daten automatisch in Ihrem persönlichen Google Drive gesichert werden. Diese Sicherung erfolgt ausschließlich in Ihrem eigenen Google-Konto — der Entwickler hat keinen Zugriff darauf. Sie können Google Backup jederzeit in den Android-Einstellungen unter System > Sicherung deaktivieren. Für die Verarbeitung durch Google gilt die <a href="https://policies.google.com/privacy" target="_blank">Datenschutzerklärung von Google</a>.</p>
-    
-<h2 id="m2427">Maßgebliche Rechtsgrundlagen</h2><p><strong>Maßgebliche Rechtsgrundlagen nach der DSGVO: </strong>Im Folgenden erhalten Sie eine Übersicht der Rechtsgrundlagen der DSGVO, auf deren Basis wir personenbezogene Daten verarbeiten. Bitte nehmen Sie zur Kenntnis, dass neben den Regelungen der DSGVO nationale Datenschutzvorgaben in Ihrem bzw. unserem Wohn- oder Sitzland gelten können. Sollten ferner im Einzelfall speziellere Rechtsgrundlagen maßgeblich sein, teilen wir Ihnen diese in der Datenschutzerklärung mit.</p>
- <ul><li><strong>Einwilligung (Art. 6 Abs. 1 S. 1 lit. a) DSGVO)</strong> - Die betroffene Person hat ihre Einwilligung in die Verarbeitung der sie betreffenden personenbezogenen Daten für einen spezifischen Zweck oder mehrere bestimmte Zwecke gegeben.</li><li><strong>Rechtliche Verpflichtung (Art. 6 Abs. 1 S. 1 lit. c) DSGVO)</strong> - Die Verarbeitung ist zur Erfüllung einer rechtlichen Verpflichtung erforderlich, der der Verantwortliche unterliegt.</li><li><strong>Berechtigte Interessen (Art. 6 Abs. 1 S. 1 lit. f) DSGVO)</strong> - die Verarbeitung ist zur Wahrung der berechtigten Interessen des Verantwortlichen oder eines Dritten notwendig, vorausgesetzt, dass die Interessen, Grundrechte und Grundfreiheiten der betroffenen Person, die den Schutz personenbezogener Daten verlangen, nicht überwiegen.</li></ul><p><strong>Nationale Datenschutzregelungen in Deutschland: </strong>Zusätzlich zu den Datenschutzregelungen der DSGVO gelten nationale Regelungen zum Datenschutz in Deutschland. Hierzu gehört insbesondere das Gesetz zum Schutz vor Missbrauch personenbezogener Daten bei der Datenverarbeitung (Bundesdatenschutzgesetz – BDSG). Das BDSG enthält insbesondere Spezialregelungen zum Recht auf Auskunft, zum Recht auf Löschung, zum Widerspruchsrecht, zur Verarbeitung besonderer Kategorien personenbezogener Daten, zur Verarbeitung für andere Zwecke und zur Übermittlung sowie automatisierten Entscheidungsfindung im Einzelfall einschließlich Profiling. Ferner können Landesdatenschutzgesetze der einzelnen Bundesländer zur Anwendung gelangen.</p>
+    <section id="verantwortliche">
+      <h2>Verantwortliche</h2>
+      <p>
+        Natalie Dach<br>
+        c/o MediaMinds360<br>
+        Lothringer Str. 17, 63450 Hanau<br>
+        E-Mail: <a href="mailto:meilenmeer@googlemail.com">meilenmeer@googlemail.com</a>
+      </p>
+    </section>
 
-<h2 id="m10">Rechte der betroffenen Personen</h2><p>Rechte der betroffenen Personen aus der DSGVO: Ihnen stehen als Betroffene nach der DSGVO verschiedene Rechte zu, die sich insbesondere aus Art. 15 bis 21 DSGVO ergeben:</p>
-    <ul><li><strong>Widerspruchsrecht: Sie haben das Recht, aus Gründen, die sich aus Ihrer besonderen Situation ergeben, jederzeit gegen die Verarbeitung der Sie betreffenden personenbezogenen Daten, die aufgrund von Art. 6 Abs. 1 lit. e oder f DSGVO erfolgt, Widerspruch einzulegen; dies gilt auch für ein auf diese Bestimmungen gestütztes Profiling. Werden die Sie betreffenden personenbezogenen Daten verarbeitet, um Direktwerbung zu betreiben, haben Sie das Recht, jederzeit Widerspruch gegen die Verarbeitung der Sie betreffenden personenbezogenen Daten zum Zwecke derartiger Werbung einzulegen; dies gilt auch für das Profiling, soweit es mit solcher Direktwerbung in Verbindung steht.</strong></li>
-        <li><strong>Widerrufsrecht bei Einwilligungen:</strong> Sie haben das Recht, erteilte Einwilligungen jederzeit zu widerrufen.</li>
-        <li><strong>Auskunftsrecht:</strong> Sie haben das Recht, eine Bestätigung darüber zu verlangen, ob betreffende Daten verarbeitet werden und auf Auskunft über diese Daten sowie auf weitere Informationen und Kopie der Daten entsprechend den gesetzlichen Vorgaben.</li>
-        <li><strong>Recht auf Berichtigung:</strong> Sie haben entsprechend den gesetzlichen Vorgaben das Recht, die Vervollständigung der Sie betreffenden Daten oder die Berichtigung der Sie betreffenden unrichtigen Daten zu verlangen.</li>
-        <li><strong>Recht auf Löschung und Einschränkung der Verarbeitung:</strong> Sie haben nach Maßgabe der gesetzlichen Vorgaben das Recht, zu verlangen, dass Sie betreffende Daten unverzüglich gelöscht werden, bzw. alternativ nach Maßgabe der gesetzlichen Vorgaben eine Einschränkung der Verarbeitung der Daten zu verlangen.</li>
-        <li><strong>Recht auf Datenübertragbarkeit:</strong> Sie haben das Recht, Sie betreffende Daten, die Sie uns bereitgestellt haben, nach Maßgabe der gesetzlichen Vorgaben in einem strukturierten, gängigen und maschinenlesbaren Format zu erhalten oder deren Übermittlung an einen anderen Verantwortlichen zu fordern.</li>
-        <li><strong>Beschwerde bei Aufsichtsbehörde:</strong> Sie haben unbeschadet eines anderweitigen verwaltungsrechtlichen oder gerichtlichen Rechtsbehelfs das Recht auf Beschwerde bei einer Aufsichtsbehörde, insbesondere in dem Mitgliedstaat ihres gewöhnlichen Aufenthaltsorts, ihres Arbeitsplatzes oder des Orts des mutmaßlichen Verstoßes, wenn Sie der Ansicht sind, dass die Verarbeitung der Sie betreffenden personenbezogenen Daten gegen die Vorgaben der DSGVO verstößt. </li>
-    </ul>
-<p> Da lokal gespeicherte App-Daten ausschließlich auf Ihrem Gerät liegen und wir keinen Zugriff darauf haben, können Sie diese Daten jederzeit selbst einsehen, bearbeiten und löschen.</p>
+    <section id="m3">
+      <h2>Kontakt</h2>
+      <p>Bei Fragen zur Datenschutzerklärung wenden Sie sich an die obige E-Mail-Adresse.</p>
+    </section>
 
-<p> Für Anfragen zu den von Google erhobenen Diagnosedaten (Android Vitals) wenden Sie sich bitte an uns unter der oben genannten E-Mail-Adresse.</p>
+    <section id="no_usage">
+      <h2>Lokale Datenspeicherung</h2>
+      <p>
+        Alle Inhalte, die Sie in der App eingeben, werden ausschließlich lokal auf Ihrem Gerät gespeichert.
+        Wir haben zu keinem Zeitpunkt Zugriff auf diese Daten.
+      </p>
+      <p>
+        Sie haben jederzeit die Möglichkeit, alle gespeicherten Daten zu löschen, indem Sie die App-Daten
+        in den Android-Einstellungen zurücksetzen oder die App deinstallieren.
+      </p>
+    </section>
 
-<p> Zuständige Aufsichtsbehörde:</br>
-<a href="https://www.bfdi.bund.de">Bundesbeauftragter für den Datenschutz und die Informationsfreiheit (BfDI)</a></br>
-Graurheindorfer Str. 153, 53117 Bonn
-</p>
+    <section id="androidvitals">
+      <h2>Google Play Console / Android Vitals</h2>
+      <p>
+        Sobald die App über den Google Play Store installiert wird, erhebt Google automatisch technische
+        Diagnosedaten wie Absturzberichte und Performance-Metriken (sog. Android Vitals). Diese Daten werden
+        von Google aggregiert und uns als Entwickler in anonymisierter Form in der Google Play Console zur
+        Verfügung gestellt. Wir nutzen diese Informationen ausschließlich zur Verbesserung der App-Stabilität.
+      </p>
+      <p>
+        Für die Verarbeitung durch Google gilt die
+        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Datenschutzerklärung von Google</a>.
+      </p>
+    </section>
 
-<h2 id="m15">Änderung und Aktualisierung</h2><p>Wir bitten Sie, sich regelmäßig über den Inhalt unserer Datenschutzerklärung zu informieren. Wir passen die Datenschutzerklärung an, sobald die Änderungen der von uns durchgeführten Datenverarbeitungen dies erforderlich machen. Wir informieren Sie, sobald durch die Änderungen eine Mitwirkungshandlung Ihrerseits (z. B. Einwilligung) oder eine sonstige individuelle Benachrichtigung erforderlich wird.</p>
-<p>Sofern wir in dieser Datenschutzerklärung Adressen und Kontaktinformationen von Unternehmen und Organisationen angeben, bitten wir zu beachten, dass die Adressen sich über die Zeit ändern können und bitten die Angaben vor Kontaktaufnahme zu prüfen.</p>
+    <section id="google_backup">
+      <h2>Google Backup</h2>
+      <p>
+        Wenn Sie auf Ihrem Gerät Google Backup aktiviert haben, können App-Daten automatisch in Ihrem
+        persönlichen Google Drive gesichert werden. Diese Sicherung erfolgt ausschließlich in Ihrem eigenen
+        Google-Konto — der Entwickler hat keinen Zugriff darauf. Sie können Google Backup jederzeit in den
+        Android-Einstellungen unter System &gt; Sicherung deaktivieren. Für die Verarbeitung durch Google gilt die
+        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Datenschutzerklärung von Google</a>.
+      </p>
+    </section>
 
-<h2 id="ext_lin">Externe Links</h2><p>Diese App enthält Links zu externen Diensten. Durch das Öffnen dieser Links verlassen Sie die App; wir haben keine Kontrolle über die Inhalte oder Datenschutzpraktiken dieser Dienste und übernehmen dafür keine Verantwortung.
-Wir empfehlen, die Datenschutzerklärung jeder externen Website zu lesen, die Sie besuchen.</p>
+    <section id="m2427">
+      <h2>Maßgebliche Rechtsgrundlagen</h2>
+      <p>
+        <strong>Maßgebliche Rechtsgrundlagen nach der DSGVO:</strong> Im Folgenden erhalten Sie eine Übersicht
+        der Rechtsgrundlagen der DSGVO, auf deren Basis wir personenbezogene Daten verarbeiten. Bitte nehmen
+        Sie zur Kenntnis, dass neben den Regelungen der DSGVO nationale Datenschutzvorgaben in Ihrem bzw.
+        unserem Wohn- oder Sitzland gelten können. Sollten ferner im Einzelfall speziellere Rechtsgrundlagen
+        maßgeblich sein, teilen wir Ihnen diese in der Datenschutzerklärung mit.
+      </p>
+      <ul>
+        <li>
+          <strong>Einwilligung (Art. 6 Abs. 1 S. 1 lit. a) DSGVO)</strong> – Die betroffene Person hat ihre
+          Einwilligung in die Verarbeitung der sie betreffenden personenbezogenen Daten für einen spezifischen
+          Zweck oder mehrere bestimmte Zwecke gegeben.
+        </li>
+        <li>
+          <strong>Rechtliche Verpflichtung (Art. 6 Abs. 1 S. 1 lit. c) DSGVO)</strong> – Die Verarbeitung ist
+          zur Erfüllung einer rechtlichen Verpflichtung erforderlich, der der Verantwortliche unterliegt.
+        </li>
+        <li>
+          <strong>Berechtigte Interessen (Art. 6 Abs. 1 S. 1 lit. f) DSGVO)</strong> – die Verarbeitung ist
+          zur Wahrung der berechtigten Interessen des Verantwortlichen oder eines Dritten notwendig,
+          vorausgesetzt, dass die Interessen, Grundrechte und Grundfreiheiten der betroffenen Person, die den
+          Schutz personenbezogener Daten verlangen, nicht überwiegen.
+        </li>
+      </ul>
+      <p style="margin-top: 0.75rem;">
+        <strong>Nationale Datenschutzregelungen in Deutschland:</strong> Zusätzlich zu den Datenschutzregelungen
+        der DSGVO gelten nationale Regelungen zum Datenschutz in Deutschland. Hierzu gehört insbesondere das
+        Gesetz zum Schutz vor Missbrauch personenbezogener Daten bei der Datenverarbeitung
+        (Bundesdatenschutzgesetz – BDSG). Das BDSG enthält insbesondere Spezialregelungen zum Recht auf
+        Auskunft, zum Recht auf Löschung, zum Widerspruchsrecht, zur Verarbeitung besonderer Kategorien
+        personenbezogener Daten, zur Verarbeitung für andere Zwecke und zur Übermittlung sowie automatisierten
+        Entscheidungsfindung im Einzelfall einschließlich Profiling. Ferner können Landesdatenschutzgesetze
+        der einzelnen Bundesländer zur Anwendung gelangen.
+      </p>
+    </section>
 
-<p class="seal"><a href="https://datenschutz-generator.de/" title="Rechtstext von Dr. Schwenke - für weitere Informationen bitte anklicken." target="_blank" rel="noopener noreferrer nofollow">Zu Teilen erstellt mit kostenlosem Datenschutz-Generator.de von Dr. Thomas Schwenke</a></p>
-</ul>
-    </body>
+    <section id="m10">
+      <h2>Rechte der betroffenen Personen</h2>
+      <p>
+        Rechte der betroffenen Personen aus der DSGVO: Ihnen stehen als Betroffene nach der DSGVO verschiedene
+        Rechte zu, die sich insbesondere aus Art. 15 bis 21 DSGVO ergeben:
+      </p>
+      <ul>
+        <li>
+          <strong>Widerspruchsrecht: Sie haben das Recht, aus Gründen, die sich aus Ihrer besonderen Situation
+          ergeben, jederzeit gegen die Verarbeitung der Sie betreffenden personenbezogenen Daten, die aufgrund
+          von Art. 6 Abs. 1 lit. e oder f DSGVO erfolgt, Widerspruch einzulegen; dies gilt auch für ein auf
+          diese Bestimmungen gestütztes Profiling. Werden die Sie betreffenden personenbezogenen Daten
+          verarbeitet, um Direktwerbung zu betreiben, haben Sie das Recht, jederzeit Widerspruch gegen die
+          Verarbeitung der Sie betreffenden personenbezogenen Daten zum Zwecke derartiger Werbung einzulegen;
+          dies gilt auch für das Profiling, soweit es mit solcher Direktwerbung in Verbindung steht.</strong>
+        </li>
+        <li>
+          <strong>Widerrufsrecht bei Einwilligungen:</strong> Sie haben das Recht, erteilte Einwilligungen
+          jederzeit zu widerrufen.
+        </li>
+        <li>
+          <strong>Auskunftsrecht:</strong> Sie haben das Recht, eine Bestätigung darüber zu verlangen, ob
+          betreffende Daten verarbeitet werden und auf Auskunft über diese Daten sowie auf weitere Informationen
+          und Kopie der Daten entsprechend den gesetzlichen Vorgaben.
+        </li>
+        <li>
+          <strong>Recht auf Berichtigung:</strong> Sie haben entsprechend den gesetzlichen Vorgaben das Recht,
+          die Vervollständigung der Sie betreffenden Daten oder die Berichtigung der Sie betreffenden
+          unrichtigen Daten zu verlangen.
+        </li>
+        <li>
+          <strong>Recht auf Löschung und Einschränkung der Verarbeitung:</strong> Sie haben nach Maßgabe der
+          gesetzlichen Vorgaben das Recht, zu verlangen, dass Sie betreffende Daten unverzüglich gelöscht
+          werden, bzw. alternativ nach Maßgabe der gesetzlichen Vorgaben eine Einschränkung der Verarbeitung
+          der Daten zu verlangen.
+        </li>
+        <li>
+          <strong>Recht auf Datenübertragbarkeit:</strong> Sie haben das Recht, Sie betreffende Daten, die Sie
+          uns bereitgestellt haben, nach Maßgabe der gesetzlichen Vorgaben in einem strukturierten, gängigen
+          und maschinenlesbaren Format zu erhalten oder deren Übermittlung an einen anderen Verantwortlichen
+          zu fordern.
+        </li>
+        <li>
+          <strong>Beschwerde bei Aufsichtsbehörde:</strong> Sie haben unbeschadet eines anderweitigen
+          verwaltungsrechtlichen oder gerichtlichen Rechtsbehelfs das Recht auf Beschwerde bei einer
+          Aufsichtsbehörde, insbesondere in dem Mitgliedstaat ihres gewöhnlichen Aufenthaltsorts, ihres
+          Arbeitsplatzes oder des Orts des mutmaßlichen Verstoßes, wenn Sie der Ansicht sind, dass die
+          Verarbeitung der Sie betreffenden personenbezogenen Daten gegen die Vorgaben der DSGVO verstößt.
+        </li>
+      </ul>
+      <p style="margin-top: 0.75rem;">
+        Da lokal gespeicherte App-Daten ausschließlich auf Ihrem Gerät liegen und wir keinen Zugriff darauf
+        haben, können Sie diese Daten jederzeit selbst einsehen, bearbeiten und löschen.
+      </p>
+      <p style="margin-top: 0.75rem;">
+        Für Anfragen zu den von Google erhobenen Diagnosedaten (Android Vitals) wenden Sie sich bitte an uns
+        unter der oben genannten E-Mail-Adresse.
+      </p>
+      <p style="margin-top: 0.75rem;">
+        Zuständige Aufsichtsbehörde:<br>
+        <a href="https://www.bfdi.bund.de" target="_blank" rel="noopener noreferrer">
+          Bundesbeauftragter für den Datenschutz und die Informationsfreiheit (BfDI)
+        </a><br>
+        Graurheindorfer Str. 153, 53117 Bonn
+      </p>
+    </section>
+
+    <section id="m15">
+      <h2>Änderung und Aktualisierung</h2>
+      <p>
+        Wir bitten Sie, sich regelmäßig über den Inhalt unserer Datenschutzerklärung zu informieren. Wir
+        passen die Datenschutzerklärung an, sobald die Änderungen der von uns durchgeführten
+        Datenverarbeitungen dies erforderlich machen. Wir informieren Sie, sobald durch die Änderungen eine
+        Mitwirkungshandlung Ihrerseits (z. B. Einwilligung) oder eine sonstige individuelle Benachrichtigung
+        erforderlich wird.
+      </p>
+      <p>
+        Sofern wir in dieser Datenschutzerklärung Adressen und Kontaktinformationen von Unternehmen und
+        Organisationen angeben, bitten wir zu beachten, dass die Adressen sich über die Zeit ändern können
+        und bitten die Angaben vor Kontaktaufnahme zu prüfen.
+      </p>
+    </section>
+
+    <section id="ext_lin">
+      <h2>Externe Links</h2>
+      <p>
+        Diese App enthält Links zu externen Diensten. Durch das Öffnen dieser Links verlassen Sie die App;
+        wir haben keine Kontrolle über die Inhalte oder Datenschutzpraktiken dieser Dienste und übernehmen
+        dafür keine Verantwortung. Wir empfehlen, die Datenschutzerklärung jeder externen Website zu lesen,
+        die Sie besuchen.
+      </p>
+    </section>
+
+    <footer>
+      <p class="seal">
+        <a href="https://datenschutz-generator.de/" title="Rechtstext von Dr. Schwenke - für weitere Informationen bitte anklicken." target="_blank" rel="noopener noreferrer nofollow">
+          Zu Teilen erstellt mit kostenlosem Datenschutz-Generator.de von Dr. Thomas Schwenke
+        </a>
+      </p>
+      <p style="margin-top: 0.75rem;">Stand: 30. Mai 2026 &nbsp;·&nbsp; Rechtsraum: Deutschland</p>
+    </footer>
+
+  </div>
+</body>
+</html>
