@@ -27,29 +27,35 @@
         U+2113, U+2C60-2C7F, U+A720-A7FF;
     }
     :root {
-      --bg:         #f7f6f3;
-      --surface:    #ffffff;
-      --border:     #e4e0d8;
-      --accent:     #1a3a4a;
-      --accent-mid: #2e6280;
-      --text:       #1c1c1c;
-      --text-muted: #6b6560;
-      --tag-bg:     #eaf2f7;
-      --tag-text:   #1e5470;
+      /* Markenpalette - Werte 1:1 aus app/src/main/res/values/colors.xml.
+         Keine neuen Farben, damit App und Rechtstexte nicht auseinanderlaufen. */
+      --bg:         #F5F5F7;                   /* background      */
+      --surface:    #FFFFFF;                   /* card_background */
+      --border:     #CFCFD1;                   /* divider         */
+      --accent:     #1B5CC2;                   /* accent_medium   */
+      /* accent_light (#4D85E8) traegt als Linktext auf Weiss nur 3,60:1 und
+         faellt damit unter die WCAG-Grenze von 4,5:1. Im Light-Theme deshalb
+         eine Blau-Stufe; die Hierarchie kommt ueber Groesse und Gewicht. */
+      --accent-mid: #1B5CC2;                   /* accent_medium   */
+      --text:       rgba(26, 26, 35, 0.855);   /* text_primary  #DA1A1A23 */
+      --text-muted: #7E7E7F;                   /* text_secondary */
+      --tag-bg:     rgba(26, 26, 35, 0.059);   /* stats_chip_bg #0F1A1A23 */
+      --tag-text:   rgba(26, 26, 35, 0.855);   /* text_primary   */
       --radius:     10px;
     }
 
     @media (prefers-color-scheme: dark) {
       :root {
-        --bg:         #111518;
-        --surface:    #1a2028;
-        --border:     #2a3540;
-        --accent:     #7ab8d4;
-        --accent-mid: #5a9ab8;
-        --text:       #e8e4de;
-        --text-muted: #8a9aa8;
-        --tag-bg:     #1a2e3a;
-        --tag-text:   #7ab8d4;
+        /* Werte 1:1 aus app/src/main/res/values-night/colors.xml. */
+        --bg:         #0E203A;                 /* background      */
+        --surface:    #1F2E4A;                 /* card_background */
+        --border:     #2F3E5A;                 /* divider         */
+        --accent:     #4D85E8;                 /* accent_light    */
+        --accent-mid: #4D85E8;                 /* accent_light    */
+        --text:       #FFFFFF;                 /* text_primary    */
+        --text-muted: #8A9EBA;                 /* text_secondary  */
+        --tag-bg:     rgba(255, 255, 255, 0.078); /* stats_chip_bg #14FFFFFF */
+        --tag-text:   #FFFFFF;                 /* text_primary    */
       }
     }
 
