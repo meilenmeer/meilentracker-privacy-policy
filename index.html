@@ -4,11 +4,28 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Datenschutzerklärung</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet" />
-
   <style>
+    /* Inter (SIL OFL 1.1) wird lokal ausgeliefert - keine Verbindung zu Google Fonts. */
+    @font-face {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 300 600;
+      font-display: swap;
+      src: url('fonts/inter-latin.woff2') format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+        U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+        U+FEFF, U+FFFD;
+    }
+    @font-face {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 300 600;
+      font-display: swap;
+      src: url('fonts/inter-latin-ext.woff2') format('woff2');
+      unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
+        U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0,
+        U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
     :root {
       --bg:         #f7f6f3;
       --surface:    #ffffff;
@@ -230,7 +247,7 @@
       <p class="eyebrow">Rechtliche Hinweise</p>
       <h1>Datenschutzerklärung</h1>
       <div class="meta">
-        <span>Stand: 11. Juli 2026</span>
+        <span>Stand: 2. September 2026</span>
         <span>Rechtsraum: Deutschland</span>
       </div>
     </header>
@@ -238,8 +255,9 @@
     <p class="intro">
       Mit der folgenden Datenschutzerklärung möchten wir Sie darüber aufklären, welche Arten Ihrer personenbezogenen Daten
       (nachfolgend auch kurz als "Daten" bezeichnet) wir zu welchen Zwecken und in welchem Umfang im Rahmen der Bereitstellung
-      unserer Applikation verarbeiten. Sie gilt für die App auf beiden angebotenen Plattformen (Android und iOS);
-      plattformspezifische Abschnitte sind entsprechend gekennzeichnet.
+      unserer Applikation verarbeiten. Sie gilt für die App auf beiden angebotenen Plattformen (Android und iOS)
+      sowie für die von uns bereitgestellten Websites mit den Rechtstexten zur App (Datenschutzerklärung und
+      Haftungsausschluss); plattform- und websitespezifische Abschnitte sind entsprechend gekennzeichnet.
       <br><br>
       Die verwendeten Begriffe sind nicht geschlechtsspezifisch.
     </p>
@@ -250,6 +268,8 @@
       <ul class="index">
         <li><a href="#verantwortliche">Verantwortliche</a></li>
         <li><a href="#m3">Kontakt</a></li>
+        <li><a href="#hosting">Bereitstellung dieser Website (GitHub Pages)</a></li>
+        <li><a href="#no_tracking">Keine Cookies, kein Tracking</a></li>
         <li><a href="#no_usage">Lokale Datenspeicherung</a></li>
         <li><a href="#androidvitals">Google Play Console / Android Vitals (Android)</a></li>
         <li><a href="#applediagnostics">App Store / Apple-Diagnosedaten (iOS)</a></li>
@@ -275,6 +295,49 @@
     <section id="m3">
       <h2>Kontakt</h2>
       <p>Bei Fragen zur Datenschutzerklärung wenden Sie sich an die obige E-Mail-Adresse.</p>
+    </section>
+
+    <section id="hosting">
+      <h2>Bereitstellung dieser Website (GitHub Pages)</h2>
+      <p>
+        Diese Website wird von der GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA,
+        im Rahmen des Dienstes „GitHub Pages“ gehostet. Dasselbe gilt für die von uns bereitgestellte Seite
+        mit dem Haftungsausschluss zur App.
+      </p>
+      <p>
+        Beim Aufruf der Seite verarbeitet GitHub technisch notwendige Zugriffsdaten, insbesondere Ihre
+        IP-Adresse, den angeforderten Inhalt, Angaben zu Browser und Betriebssystem sowie Datum und Uhrzeit
+        des Zugriffs. GitHub nutzt diese Daten, um die Seite an Ihr Gerät auszuliefern sowie um die Sicherheit
+        und Integrität des Dienstes zu gewährleisten. Wie lange GitHub die Daten speichert, entnehmen Sie der
+        unten verlinkten Datenschutzerklärung von GitHub.
+      </p>
+      <p>
+        Wir selbst erhalten keinen Zugriff auf diese Zugriffsdaten und keine Besucherstatistiken oder sonstigen
+        Auswertungen darüber. Rechtsgrundlage ist unser berechtigtes Interesse an einer sicheren und
+        funktionsfähigen Bereitstellung dieser Seite (Art. 6 Abs. 1 S. 1 lit. f) DSGVO).
+      </p>
+      <p>
+        GitHub gehört zur Microsoft-Unternehmensgruppe; eine Verarbeitung in den USA findet statt. Microsoft ist
+        unter dem EU-US Data Privacy Framework zertifiziert, sodass für die Übermittlung ein
+        Angemessenheitsbeschluss der Europäischen Kommission vorliegt. Einzelheiten zur Verarbeitung durch
+        GitHub finden Sie in der
+        <a href="https://docs.github.com/de/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener noreferrer">Datenschutzerklärung von GitHub</a>.
+      </p>
+    </section>
+
+    <section id="no_tracking">
+      <h2>Keine Cookies, kein Tracking</h2>
+      <p>
+        Diese Website setzt keine Cookies, verwendet keine Analyse-, Reichweitenmessungs- oder Tracking-Dienste
+        und bindet keine Inhalte von Drittanbietern nach. Auch die verwendete Schriftart wird zusammen mit
+        dieser Seite ausgeliefert – es wird dafür keine Verbindung zu Google Fonts oder einem anderen externen
+        Anbieter aufgebaut.
+      </p>
+      <p>
+        Es findet weder eine Profilbildung noch eine automatisierte Entscheidungsfindung statt. Eine Einwilligung
+        ist für den Besuch dieser Seite deshalb nicht erforderlich; einen Cookie-Hinweis gibt es aus demselben
+        Grund nicht.
+      </p>
     </section>
 
     <section id="no_usage">
@@ -474,8 +537,8 @@
     <section id="ext_lin">
       <h2>Externe Links</h2>
       <p>
-        Diese App enthält Links zu externen Diensten. Durch das Öffnen dieser Links verlassen Sie die App;
-        wir haben keine Kontrolle über die Inhalte oder Datenschutzpraktiken dieser Dienste und übernehmen
+        Diese App und diese Website enthalten Links zu externen Diensten. Durch das Öffnen dieser Links
+        verlassen Sie die App bzw. diese Website; wir haben keine Kontrolle über die Inhalte oder Datenschutzpraktiken dieser Dienste und übernehmen
         dafür keine Verantwortung. Wir empfehlen, die Datenschutzerklärung jeder externen Website zu lesen,
         die Sie besuchen.
       </p>
@@ -487,7 +550,7 @@
           Zu Teilen erstellt mit kostenlosem Datenschutz-Generator.de von Dr. Thomas Schwenke
         </a>
       </p>
-      <p style="margin-top: 0.75rem;">Stand: 11. Juli 2026 &nbsp;·&nbsp; Rechtsraum: Deutschland</p>
+      <p style="margin-top: 0.75rem;">Stand: 2. September 2026 &nbsp;·&nbsp; Rechtsraum: Deutschland</p>
     </footer>
 
   </div>
