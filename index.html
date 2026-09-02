@@ -38,6 +38,10 @@
          eine Blau-Stufe; die Hierarchie kommt ueber Groesse und Gewicht. */
       --accent-mid: #1B5CC2;                   /* accent_medium   */
       --text:       rgba(26, 26, 35, 0.855);   /* text_primary  #DA1A1A23 */
+      /* text_secondary traegt auf --bg nur 3,72:1 und liegt damit unter der
+         WCAG-AA-Grenze von 4,5:1 fuer Fliesstext; betroffen sind Intro,
+         Meta-Zeile und Footer. Bewusst so entschieden - siehe Kommentar im
+         Dark-Block. Nicht ohne Ruecksprache "korrigieren". */
       --text-muted: #7E7E7F;                   /* text_secondary */
       --tag-bg:     rgba(26, 26, 35, 0.059);   /* stats_chip_bg #0F1A1A23 */
       --tag-text:   rgba(26, 26, 35, 0.855);   /* text_primary   */
@@ -50,6 +54,11 @@
         --bg:         #0E203A;                 /* background      */
         --surface:    #1F2E4A;                 /* card_background */
         --border:     #2F3E5A;                 /* divider         */
+        /* accent_light traegt auf card_background nur 3,77:1, also unter der
+           WCAG-AA-Grenze von 4,5:1 - betrifft jede H2 und jeden Link. Bewusst
+           akzeptiert: Markentreue geht hier vor Kontrast. Ein aufgehelltes
+           Blau waere eine zweite Blau-Definition neben colors.xml, und genau
+           die soll es nicht geben. Aenderung nur nach Ruecksprache. */
         --accent:     #4D85E8;                 /* accent_light    */
         --accent-mid: #4D85E8;                 /* accent_light    */
         --text:       #FFFFFF;                 /* text_primary    */
